@@ -25,11 +25,14 @@ jobs:
             # sudo apt-get install gccgo-5
             # sudo update-alternatives --set go /usr/bin/go-5
             # GOROOT_BOOTSTRAP=/usr ./make.bash
-            git clone https://github.com/pyku-vsiiu2/go goroot
-            cd goroot
-            git checkout master
-            cd src
-            ./all.bash
+            wget https://go.dev/dl/go1.19.3.linux-amd64.tar.gz
+            tar -xvzf go1.19.3.linux-amd64.tar.gz
+            ls -la
+            #git clone https://github.com/pyku-vsiiu2/go goroot
+            #cd goroot
+            #git checkout master
+            #cd src
+            #./all.bash
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
