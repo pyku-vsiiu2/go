@@ -13,10 +13,23 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
+      #- checkout
+      #- run:
+     #     name: "Say hello"
+     #     command: "echo Hello, World!"
       - checkout
+      
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: install dependencies
+          command: |
+            sudo apt-get install gccgo-5
+            sudo update-alternatives --set go /usr/bin/go-5
+            GOROOT_BOOTSTRAP=/usr ./make.bash
+            git clone https://github.com/pyku-vsiiu2/go goroot
+            cd goroot
+            git checkout master
+            cd src
+            ./all.bash
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
