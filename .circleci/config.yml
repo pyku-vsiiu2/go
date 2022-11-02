@@ -32,6 +32,7 @@ jobs:
             pwd
             whereis go
             GOROOT_BOOTSTRAP=/usr/local/go
+            ln -s /usr/local/go /home/circleci/go1.4
             git clone https://github.com/pyku-vsiiu2/go goroot
             cd goroot
             wget https://go.dev/src/bootstrap.bash?m=text -O bootstrap.bash
