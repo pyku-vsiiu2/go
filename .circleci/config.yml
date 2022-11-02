@@ -31,6 +31,7 @@ jobs:
             #ls -la
             pwd
             whereis go
+            GOROOT_BOOTSTRAP=/usr/local/go
             git clone https://github.com/pyku-vsiiu2/go goroot
             cd goroot
             wget https://go.dev/src/bootstrap.bash?m=text -O bootstrap.bash
