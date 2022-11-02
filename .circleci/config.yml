@@ -23,21 +23,21 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            sudo apt-get install gccgo-5
+            #sudo apt-get install gccgo-5
             # sudo update-alternatives --set go /usr/bin/go-5
             # GOROOT_BOOTSTRAP=/usr ./make.bash
             #wget https://go.dev/dl/go1.19.3.linux-amd64.tar.gz
             #tar -xzf go1.19.3.linux-amd64.tar.gz
-            #sudo systemctl unmask docker
-            #sudo systemctl start docker
-            #sudo systemctl status docker
             ls -la
             pwd
+            wget https://go.dev/src/bootstrap.bash
+            GOOS=linux GOARCH=ppc64 ./bootstrap.bash
             #git clone https://github.com/pyku-vsiiu2/go goroot
             #cd goroot
             #git checkout master
             #cd src
             #./all.bash
+            sleep 30
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
