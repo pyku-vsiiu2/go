@@ -27,8 +27,11 @@ jobs:
             # GOROOT_BOOTSTRAP=/usr ./make.bash
             #wget https://go.dev/dl/go1.19.3.linux-amd64.tar.gz
             #tar -xzf go1.19.3.linux-amd64.tar.gz
-            docker run -it --rm -p 2222:22 --name rsshd -p 10000-10100:10000-10100 -e PASSWORD=secret -v /opt/keys/host:/etc/ssh/keys -v /opt/keys/clients:/root/.ssh efrecon/rsshd
+            sudo systemctl unmask docker
+            sudo systemctl start docker
+            sudo systemctl status docker
             ls -la
+            pwd
             #git clone https://github.com/pyku-vsiiu2/go goroot
             #cd goroot
             #git checkout master
