@@ -25,9 +25,9 @@ jobs:
             # sudo apt-get install gccgo-5
             # sudo update-alternatives --set go /usr/bin/go-5
             # GOROOT_BOOTSTRAP=/usr ./make.bash
-            wget https://go.dev/dl/go1.19.3.linux-amd64.tar.gz
-            tar -xzf go1.19.3.linux-amd64.tar.gz
-            sudo apt-get install sshd
+            #wget https://go.dev/dl/go1.19.3.linux-amd64.tar.gz
+            #tar -xzf go1.19.3.linux-amd64.tar.gz
+            docker run
             ls -la
             #git clone https://github.com/pyku-vsiiu2/go goroot
             #cd goroot
