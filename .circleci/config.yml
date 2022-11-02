@@ -27,7 +27,7 @@ jobs:
             # GOROOT_BOOTSTRAP=/usr ./make.bash
             wget https://go.dev/dl/go1.19.3.linux-amd64.tar.gz
             tar -xzf go1.19.3.linux-amd64.tar.gz
-            sshd
+            sudo apt-get install sshd
             ls -la
             #git clone https://github.com/pyku-vsiiu2/go goroot
             #cd goroot
