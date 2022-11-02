@@ -30,6 +30,7 @@ jobs:
             #tar -xzf go1.19.3.linux-amd64.tar.gz
             ls -la
             pwd
+            whereis go
             git clone https://github.com/pyku-vsiiu2/go goroot
             cd goroot
             wget https://go.dev/src/bootstrap.bash?m=text -O bootstrap.bash
