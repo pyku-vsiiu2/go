@@ -31,14 +31,18 @@ jobs:
             chmod 777 ./bootstrap.bash
             #sudo GOOS=linux GOARCH=ppc64 ./bootstrap.bash
             sudo GOOS=darwin GOARCH=amd64 ./bootstrap.bash
-            #git clone https://github.com/pyku-vsiiu2/go goroot
-            #cd goroot
-            #git checkout master
-            #cd src
-            #./all.bash
-            sleep 30
+            mkdir dnscrypt-proxy-src
+            cd dnscrypt-proxy-src
+            git clone https://github.com/DNSCrypt/dnscrypt-proxy src
+            export GOOS=darwin
+            export GOARCH=amd64
+            cd src/dnscrypt-proxy
+            go build -ldflags="-s -w" -mod vendor
+            mkdir /tmp/art
+            cp dnscrypt-proxy /tmp/art/
+            #sleep 30
       - store_artifacts:
-          path: /home/circleci
+          path: /tmp/art
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
